@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style type="text/css">
+    
+    html, body {
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    body {background-image:url("cenario.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+       
+
+    
+    }
+
+    #urso-img {
+        position: fixed;
+        width: 80px;
+        margin-top:570px;       
+    }
+    </style>
+</head>
+<body>
+
+
+<img src="https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-1.png" alt="" style="display:none;"/>
+<img src="https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-2.png" alt="" style="display:none;"/>
+<img src="https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-3.png" alt="" style="display:none;"/>
+
+
+<img id="urso-img" alt="Urso Animado" src="https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-1.png"/>
+
+<script type="text/javascript">
+const larguraDaTela = window.screen.availWidth;
+var position = 0;
+var aumentar = true;
+
+var animacaoFrame = 0;
+
+const animacaoUrso = [
+    'https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-1.png',
+    'https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-2.png',
+    'https://raw.githubusercontent.com/gabrieldarezzo/helpjs-ravi/master/images/chara-3.png',
+];
+
+setInterval(function(){
+
+    if( position > (larguraDaTela + 200) ) {
+        return false;
+    }
+    
+    document.getElementById("urso-img").src = animacaoUrso[animacaoFrame];
+    
+    
+    document.getElementById("urso-img").style = "left: " + position + "px;";
+    
+    position +=4;
+    
+    animacaoFrame++;
+    if(animacaoFrame > 2) {
+        animacaoFrame = 0;
+    }
+    
+    
+}, 200);
+
+
+
+
+</script>
+</body>
+</html>
